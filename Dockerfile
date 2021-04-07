@@ -5,6 +5,7 @@ RUN apt-get install python tcpdump python-pip -y
 RUN apt-get install aptitude -y
 
 RUN mkdir -p /home/smb
+RUN mkdir -p /var/log/honeysmb
 
 COPY libs /home/smb/libs
 COPY credentials_file /home/smb/credentials_file

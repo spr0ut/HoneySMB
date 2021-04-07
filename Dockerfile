@@ -1,8 +1,6 @@
-FROM ubuntu
-MAINTAINER Rohit Sehgal (rsehgal@iitk.ac.in)
+FROM ubuntu:18.04
 
 RUN apt-get update -y && apt-get install python2.7 -y
-RUN apt-get update
 RUN apt-get install python tcpdump python-pip -y
 RUN apt-get install aptitude -y
 

@@ -3506,7 +3506,6 @@ class SMBSERVERHandler(SocketServer.BaseRequestHandler):
         SocketServer.BaseRequestHandler.__init__(self, request, client_address, server)
 
     def handle(self):
-        LOG.info("Incoming connection...")
         self.__SMB.log("Incoming connection (%s,%d)" % (self.__ip, self.__port))
         self.__SMB.addConnection(self.__connId, self.__ip, self.__port)
         while True:
@@ -3874,6 +3873,7 @@ smb.SMB.TRANS_TRANSACT_NMPIPE          :self.__smbTransHandler.transactNamedPipe
 
     def log(self, msg, level=logging.INFO):
         #self.__log.log(level,msg)
+        logging.info(msg)
         return 0
 
     def getServerName(self):
